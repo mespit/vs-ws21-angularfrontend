@@ -1,0 +1,17 @@
+table {
+    border: 1px solid black;
+    box-shadow: 10px 5px 5px grey;
+}
+
+#deleteButton {
+    float: right;
+    margin-right: 1em;
+}
+
+#addBox {
+    margin-top: 2em;
+    padding-left: 0.5em;
+    padding-bottom: 1em;
+    border: 1px solid black;
+    width: 10em;
+}

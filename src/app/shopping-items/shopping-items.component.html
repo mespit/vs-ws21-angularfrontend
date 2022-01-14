@@ -1,0 +1,33 @@
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Quantity</th>
+        </tr>
+        <tr *ngFor="let item of shoppingList"
+        [class.selected]="item === selectedItem"
+        (click)="onSelect(item)">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>
+                <button id=deleteButton title="Delete" (click)="deleteItem(item.id)">Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="shoppingList.length === 0">
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+</div>
+
+<div id=addBox>
+    <h3>Add new Item</h3>
+    <label for="item">Item name:</label>
+    <input type="text" id="item" name="item" #item><br><br>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" #quantity><br><br>
+    <button title="Add" (click)="addItem(item.value, quantity.value)">Add</button>
+</div>
